@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@theme {
+  --cleyfi-blue: #0662BB;
+  --cleyfi-yellow: #F9C33D;
+  --cleyfi-lightBg: #F3FDFB;
+  --cleyfi-white: #FFFCFD;
+  --cleyfi-brown: #654117;
+  --cleyfi-deepPurple: #11001f;
+  --cleyfi-black: #000000;
+  
+  --background-default: var(--cleyfi-lightBg); 
+  --foreground-default: var(--cleyfi-deepPurple);
+}
+
+@layer base {
+  :root {
+    --cleyfi-blue: #0662BB;
+    --cleyfi-yellow: #F9C33D;
+    --cleyfi-lightBg: #f3f9fd;
+    /* --cleyfi-lightBg: #50a2ff; */
+    --cleyfi-white: #FFFCFD;
+    --cleyfi-brown: #654117;
+    /* --cleyfi-deepPurple: #654117; */
+    --cleyfi-deepPurple: #000000;
+    --cleyfi-black: #000000;
+    --cleyfi-blue-darker: #004080;
+    
+    --background-default: var(--cleyfi-lightBg); 
+    --foreground-default: var(--cleyfi-deepPurple);
+  }
+  
+  body {
+    background: var(--background-default);
+    font-family: 'Archivo', 'Quicksand', Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Example: Dark mode overrides using CleyFi (if needed, can be expanded) */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background-default: var(--cleyfi-deepPurple); 
+    --foreground-default: var(--cleyfi-white);
+  }
+} */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.animate-shimmer {
+  animation: shimmer 8s infinite linear;
+}
+
+.silver-metallic-text {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #f0f0f0 10%,
+    #d7d7d7 20%,
+    #c0c0c0 30%,
+    #a9a9a9 40%,
+    #909090 50%,
+    #a9a9a9 60%,
+    #c0c0c0 70%,
+    #d7d7d7 80%,
+    #f0f0f0 90%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 2px 3px rgba(255,255,255,0.1);
+  position: relative;
+}
+
+/* Make emojis fully visible within the silver text */
+.emoji-character {
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  /* color: inherit !important; */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1) !important;
+}
+
+/* Enhance emoji appearance */
+.silver-metallic-text .emoji-character {
+  display: inline-block;
+  filter: drop-shadow(0 1px 1px rgba(255,255,255,0.3));
+  transform: scale(1.1);
+  margin: 0 2px;
+}
