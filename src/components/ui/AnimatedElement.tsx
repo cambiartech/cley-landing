@@ -9,6 +9,8 @@ interface AnimatedElementProps {
   transition?: object;
 }
 
+
+
 const AnimatedElement: React.FC<AnimatedElementProps> = ({
   children,
   delay = 0,
