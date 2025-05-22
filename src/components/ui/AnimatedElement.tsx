@@ -1,13 +1,15 @@
-import { motion } from "framer-motion";
+import { motion, TargetAndTransition, VariantLabels, AnimationControls } from "framer-motion";
 import React from "react";
 
 interface AnimatedElementProps {
   children: React.ReactNode;
   delay?: number;
-  initial?: object;
-  animate?: object;
+  initial?: boolean | TargetAndTransition | VariantLabels;
+  animate?: boolean | TargetAndTransition | VariantLabels | AnimationControls;
   transition?: object;
 }
+
+
 
 const AnimatedElement: React.FC<AnimatedElementProps> = ({
   children,
